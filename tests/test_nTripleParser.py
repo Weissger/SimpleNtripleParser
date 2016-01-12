@@ -1,5 +1,5 @@
 from unittest import TestCase
-from NTripleLineParser.NtripleLineParser import NtripleParser
+from src.NtripleLineParser import NtripleParser
 
 __author__ = 'tmy'
 
