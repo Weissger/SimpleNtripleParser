@@ -5,6 +5,9 @@
 A simple, weak and hopefully fast tool to parse single lines of NTriple files.
 Can't handle anything special at all.
 
+Care:
+- This tool strips the URI Indicators "<" and ">" from uris.
+
 Authors
 =======
 
