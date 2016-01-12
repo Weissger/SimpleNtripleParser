@@ -1,5 +1,5 @@
 from unittest import TestCase
-from src.NtripleLineParser import NtripleParser
+from src.NTripleLineParser import NTripleLineParser
 
 __author__ = 'tmy'
 
@@ -9,7 +9,7 @@ lines = ["# This is a comment",
 
 class TestNtripleParser(TestCase):
     def setUp(self):
-        self.parser = NtripleParser(" ")
+        self.parser = NTripleLineParser(" ")
 
     def test_is_comment_line(self):
         self.assertTrue(self.parser.is_comment_line(lines[0]))
