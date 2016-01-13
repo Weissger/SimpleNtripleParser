@@ -1,13 +1,13 @@
-from unittest import TestCase
+import unittest
 from src.NTripleLineParser import NTripleLineParser
 
 __author__ = 'tmy'
 
 lines = ["# This is a comment",
-         "<http://www.test.org/subject> <http://www.test.org/predicate> <http://www.test.org/object>."]
+         "<http://www.test.org/subject> <http://www.test.org/predicate> <http://www.test.org/object>./n"]
 
 
-class TestNtripleParser(TestCase):
+class TestNTripleParser(unittest.TestCase):
     def setUp(self):
         self.parser = NTripleLineParser(" ")
 
@@ -38,3 +38,6 @@ class TestNtripleParser(TestCase):
         self.assertEqual("http://www.test.org/subject", triple["subject"])
         self.assertEqual("http://www.test.org/predicate", triple["predicate"])
         self.assertEqual("http://www.test.org/object", triple["object"])
+
+if __name__ == '__main__':
+    unittest.main()

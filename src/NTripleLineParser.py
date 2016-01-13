@@ -42,12 +42,16 @@ class NTripleLineParser():
         if self.__is_comment_line(line):
             return None
         else:
-            return line.split(self.separator, 3)[2][1:-2]
+            obj = line.split(self.separator, 3)[2]
+            obj = obj[1:obj.index(">")]
+            return obj
 
     def get_triple(self, line):
         split_line = line.split(self.separator)
         if split_line[0].strip().startswith("#"):
             return None
         else:
+            obj = split_line[2]
+            obj = obj[1:obj.index(">")]
             return {"subject": split_line[0][1:-1], "predicate": split_line[1][1:-1],
-                    "object": split_line[2][1:-2]}
+                    "object": obj}
